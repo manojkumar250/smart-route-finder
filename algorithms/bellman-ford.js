@@ -1,0 +1,4 @@
+export function bellmanFord(g,start,end){const ns=Object.keys(g),es=[];for(const u of ns)for(const e of g[u])es.push({from:u,to:e.node,weight:e.weight});const d={},p={};ns.forEach(n=>d[n]=Infinity);d[start]=0;let operations=0;
+ for(let i=0;i<ns.length-1;i++){let changed=false;for(const e of es){operations++;if(d[e.from]!==Infinity&&d[e.from]+e.weight<d[e.to]){d[e.to]=d[e.from]+e.weight;p[e.to]=e.from;changed=true;}}if(!changed)break;}
+ for(const e of es)if(d[e.from]!==Infinity&&d[e.from]+e.weight<d[e.to])throw Error('Reachable negative-weight cycle detected.');
+ if(d[end]===Infinity)return{error:'No route exists.',operations};let path=[],n=end;while(n!==undefined){path.unshift(n);if(n===start)break;n=p[n];}return{path,distance:d[end],operations};}

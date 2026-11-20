@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Route Finder</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="#">Smart Route <span>Finder</span></a><small>ALGORITHM EXPLORER</small></header>
+<main><section class="hero"><p class="eyebrow">SHORTEST-PATH PROBLEM</p><h1>Find the route. <span>Understand the algorithm.</span></h1>
+<p>Choose two locations and compare four algorithms that search a weighted network for the shortest route.</p></section>
+<section class="cards"><article><h3>The problem</h3><p>Find the path between two locations with the smallest total distance.</p></article><article><h3>Why it matters</h3><p>Useful in navigation, delivery services, transport and network routing.</p></article><article><h3>What we compute</h3><p>Route, distance, visited nodes and algorithm performance.</p></article></section>
+<section><div class="heading"><div><p class="eyebrow">STEP 01</p><h2>Choose your journey</h2></div><p>Sample locations A–E connected by weighted roads.</p></div>
+<div class="panel controls"><label>Start location<select id="start-node"></select></label><label>Destination<select id="end-node"></select></label><button id="find-route">Find routes →</button><p id="message" role="status"></p></div></section>
+<section><div class="heading"><div><p class="eyebrow">NETWORK MAP</p><h2>Sample road network</h2></div><p>Road labels show distance in kilometres.</p></div><div class="panel"><svg id="graph" viewBox="0 0 720 330" aria-label="Weighted road network"></svg><p class="muted">Green highlights the selected shortest route.</p></div></section>
+<section><div class="heading"><div><p class="eyebrow">STEP 02</p><h2>Compare four algorithms</h2></div></div>
+<nav class="tabs"><button class="tab active" data-algorithm="brute">Brute Force</button><button class="tab" data-algorithm="dijkstra">Dijkstra</button><button class="tab" data-algorithm="bellman">Bellman-Ford</button><button class="tab" data-algorithm="astar">A*</button></nav>
+<article class="panel"><p class="eyebrow">ALGORITHM DETAILS</p><h2 id="algorithm-title">Brute Force</h2><p id="algorithm-description"></p><div class="metrics"><div>Time complexity<strong id="time-complexity"></strong></div><div>Space complexity<strong id="space-complexity"></strong></div></div><div id="algorithm-result">Choose two locations and click Find routes.</div></article></section>
+<section><div class="heading"><div><p class="eyebrow">STEP 03</p><h2>Results comparison</h2></div></div><div class="panel table-wrap"><table><thead><tr><th>Algorithm</th><th>Route</th><th>Distance</th><th>Operations</th></tr></thead><tbody id="comparison-body"><tr><td colspan="4">Run the algorithms to compare results.</td></tr></tbody></table></div></section>
+<footer>Smart Route Finder · DAA Algorithm Explorer Project</footer></main><script type="module" src="script.js"></script></body></html>
